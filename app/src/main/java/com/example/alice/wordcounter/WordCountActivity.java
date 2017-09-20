@@ -25,8 +25,8 @@ public class WordCountActivity extends AppCompatActivity {
     }
 
     public void onCountButtonClicked(View button) {
-        String text = textToCount.getText();
+        String text = textToCount.getText().toString();
         String textCounted = wordCount.count(text);
-        countedText.setText(count);
+        countedText.setText(textCounted);
     }
 }

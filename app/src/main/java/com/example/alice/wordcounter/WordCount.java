@@ -18,17 +18,19 @@ public abstract class WordCount {
     public HashMap<String, Integer> wordsByCount;
 //    public Scanner counter;
 
-    public WordCount (EditText textToCount) {
+    public WordCount (String textToCount) {
+//        this.wordsByCount = new HashMap<>();
     }
 
-    public void count(String text) {
-        String[] textToCount = text.split(" ");
+    public static String count(String text) {
+        String[] textToCount = text.trim().split(" ");
         Map<String, Integer> wordsByCount = new HashMap<>();
         for (String word: textToCount) {
             Integer count = wordsByCount.get(word);
             count = (count == null) ? 1 : ++count;
             wordsByCount.put(word, count);
         }
+        return wordsByCount.toString();
     }
 
 //    public void count (String text) {
